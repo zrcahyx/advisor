@@ -142,7 +142,7 @@ class BayesianOptimization(BaseSuggestionAlgorithm):
     if len(completed_trials) < random_init_trials:
       randomSearchAlgorithm = RandomSearchAlgorithm()
       return_trials = randomSearchAlgorithm.get_new_suggestions(
-          study_id, trials)
+          study_id, trials, number=random_init_trials - len(completed_trials))
       return return_trials
 
     else:
@@ -303,5 +303,13 @@ class BayesianOptimization(BaseSuggestionAlgorithm):
       return_trial.parameter_values = json.dumps(
           suggested_parameter_values_json)
       return_trial.save()
+      return_trials = [return_trial]
 
-    return [return_trial]
+      if number > 1:
+        rest_number = number - 1
+        randomSearchAlgorithm = RandomSearchAlgorithm()
+        rest_return_trials = randomSearchAlgorithm.get_new_suggestions(
+          study_id, trials, number=rest_number)
+        return_trials.extend(rest_return_trials)
+
+    return return_trials
