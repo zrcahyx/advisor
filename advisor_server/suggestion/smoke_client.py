@@ -1,5 +1,5 @@
 def use_advisor():
-  """
+    """
   client.get_study(study_config)
 
   while (not isDone):
@@ -13,8 +13,8 @@ def use_advisor():
 
 
 def main():
-  print("Start the main")
+    print("Start the main")
 
 
 if __name__ == "__main__":
-  main()
+    main()

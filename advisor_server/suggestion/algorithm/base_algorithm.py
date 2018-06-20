@@ -3,8 +3,9 @@ from suggestion.models import Trial
 
 
 class BaseSuggestionAlgorithm(object):
-  def get_new_suggestions(self, study_id, trials, number=1):
-    """
+
+    def get_new_suggestions(self, study_id, trials, number=1):
+        """
     The study's study_configuration is like this.
     {
           "goal": "MAXIMIZE",
@@ -33,9 +34,10 @@ class BaseSuggestionAlgorithm(object):
     Returns:
       The array of trial objects.
     """
-    return None
+        return None
 
 
 class BaseEarlyStopAlgorithm(object):
-  def get_early_stop_trials(self, trials):
-    return None
+
+    def get_early_stop_trials(self, trials):
+        return None

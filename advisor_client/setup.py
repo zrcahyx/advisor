@@ -16,24 +16,24 @@
 # pip install --index-url https://test.pypi.org/simple/ --upgrade advisor_client
 
 try:
-  from setuptools import setup
-  setup()
+    from setuptools import setup
+    setup()
 except ImportError:
-  from distutils.core import setup
+    from distutils.core import setup
 
-setup(name="advisor_clients",
-      version="0.1.1",
-      author="tobe",
-      author_email="tobeg3oogle@gmail.com",
-      url="https://github.com/tobegit3hub/advisor",
-      #install_requires=["requests>=2.6.0", "pyOpenSSL>=16.1.0",
-      #                  "argcomplete>=1.4.1"],
-      install_requires=[],
-      description="Advisor is the hyper parameters tuning system for black box optimization",
-      packages=["advisor_client"],
-      zip_safe=False,
-      entry_points={
-          "console_scripts": [
-              "advisor=advisor_client.command:main"
-          ],
-      })
+setup(
+    name="advisor_clients",
+    version="0.1.1",
+    author="tobe",
+    author_email="tobeg3oogle@gmail.com",
+    url="https://github.com/tobegit3hub/advisor",
+    #install_requires=["requests>=2.6.0", "pyOpenSSL>=16.1.0",
+    #                  "argcomplete>=1.4.1"],
+    install_requires=[],
+    description=
+    "Advisor is the hyper parameters tuning system for black box optimization",
+    packages=["advisor_client"],
+    zip_safe=False,
+    entry_points={
+        "console_scripts": ["advisor=advisor_client.command:main"],
+    })

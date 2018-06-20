@@ -9,16 +9,18 @@ from suggestion.algorithm.base_algorithm import BaseEarlyStopAlgorithm
 
 
 class RandomSearchAlgorithmTest(TestCase):
-  def setUp(self):
-    pass
 
-  def tearDown(self):
-    pass
+    def setUp(self):
+        pass
 
-  def test_init(self):
-    baseSuggestionAlgorithm = BaseSuggestionAlgorithm()
-    self.assertEqual(baseSuggestionAlgorithm.__class__,
-                     BaseSuggestionAlgorithm)
+    def tearDown(self):
+        pass
 
-    baseEarlyStopAlgorithm = BaseEarlyStopAlgorithm()
-    self.assertEqual(baseEarlyStopAlgorithm.__class__, BaseEarlyStopAlgorithm)
+    def test_init(self):
+        baseSuggestionAlgorithm = BaseSuggestionAlgorithm()
+        self.assertEqual(baseSuggestionAlgorithm.__class__,
+                         BaseSuggestionAlgorithm)
+
+        baseEarlyStopAlgorithm = BaseEarlyStopAlgorithm()
+        self.assertEqual(baseEarlyStopAlgorithm.__class__,
+                         BaseEarlyStopAlgorithm)
